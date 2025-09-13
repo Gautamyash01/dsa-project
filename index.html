@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Traffic Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚦 Smart Traffic Management System</h1>
+            <p>Dijkstra's Algorithm for Optimal Route Planning</p>
+        </header>
+
+        <div class="main-content">
+            <div class="input-panel">
+                <div class="input-section">
+                    <h3>📊 Network Configuration</h3>
+                    <div class="input-group">
+                        <label for="junctions">Number of Junctions:</label>
+                        <input type="number" id="junctions" min="1" max="50" value="5">
+                    </div>
+                    <div class="input-group">
+                        <label for="roads">Number of Roads:</label>
+                        <input type="number" id="roads" min="0" max="100" value="7">
+                    </div>
+                    <button id="generateNetwork" class="btn btn-primary">Generate Network</button>
+                </div>
+
+                <div class="input-section">
+                    <h3>🛣️ Road Configuration</h3>
+                    <div id="roadInputs" class="road-inputs">
+                        <!-- Road inputs will be generated dynamically -->
+                    </div>
+                    <button id="addRoad" class="btn btn-secondary">Add Road</button>
+                </div>
+
+                <div class="input-section">
+                    <h3>🎯 Source Selection</h3>
+                    <div class="input-group">
+                        <label for="source">Source Junction:</label>
+                        <select id="source">
+                            <option value="0">Junction 0</option>
+                        </select>
+                    </div>
+                    <button id="findPath" class="btn btn-success">Find Shortest Paths</button>
+                </div>
+            </div>
+
+            <div class="visualization-panel">
+                <div class="graph-container">
+                    <h3>🗺️ Network Visualization</h3>
+                    <div id="graph" class="graph"></div>
+                </div>
+                
+                <div class="results-panel">
+                    <h3>📈 Shortest Path Results</h3>
+                    <div id="results" class="results"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="clearAll" class="btn btn-danger">Clear All</button>
+            <button id="resetGraph" class="btn btn-warning">Reset Graph</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
